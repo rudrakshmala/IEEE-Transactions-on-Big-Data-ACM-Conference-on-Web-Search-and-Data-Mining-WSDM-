@@ -1,0 +1,25 @@
+{
+  "execution_timestamp": "2026-08-25 22:59:16",
+  "total_products": 500,
+  "total_sellers": 50,
+  "total_reviews": 5701,
+  "graph_product_nodes": 500,
+  "graph_shared_review_edges": 6053,
+  "total_communities_detected": 72,
+  "total_suspicious_products_flagged": 75,
+  "top_suspicious_seller_clusters": {
+    "1000048": 6,
+    "1000036": 4,
+    "1000042": 4,
+    "1000046": 4,
+    "1000024": 3
+  },
+  "eu_safety_enabled": true,
+  "results_file": "D:\\aliexpress-network-research\\storage\\reports\\research_run_anomaly_results.csv",
+  "eu_risk_tiers": {
+    "MODERATE_RISK": 243,
+    "LOW_RISK": 215,
+    "HIGH_RISK": 38,
+    "CRITICAL_HAZARD": 4
+  }
+}

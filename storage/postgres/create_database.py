@@ -1,13 +1,14 @@
 from dotenv import load_dotenv
+from pathlib import Path
 import os
 import psycopg2
 
-# Load variables from .env
-load_dotenv()
+# Load .env from project root
+env_path = Path(__file__).resolve().parents[2] / ".env"
+load_dotenv(env_path)
 
 HOST = os.getenv("DB_HOST")
 PORT = os.getenv("DB_PORT")
-DATABASE = os.getenv("DB_NAME")
 USER = os.getenv("DB_USER")
 PASSWORD = os.getenv("DB_PASSWORD")
 
@@ -15,26 +16,25 @@ try:
     conn = psycopg2.connect(
         host=HOST,
         port=PORT,
-        dbname=DATABASE,
+        dbname="postgres",
         user=USER,
         password=PASSWORD,
         sslmode="require"
     )
 
-    print("Connected to Azure PostgreSQL successfully!")
-
+    conn.autocommit = True
     cur = conn.cursor()
-    cur.execute("SELECT version();")
 
-    version = cur.fetchone()
-    print("Database Version:")
-    print(version)
+    cur.execute("CREATE DATABASE aliexpressdb;")
+
+    print("Database 'aliexpressdb' created successfully!")
 
     cur.close()
     conn.close()
 
-    print("Connection closed successfully.")
+except psycopg2.errors.DuplicateDatabase:
+    print("Database already exists.")
 
 except Exception as e:
-    print("Connection failed.")
+    print("Failed to create database.")
     print(e)
