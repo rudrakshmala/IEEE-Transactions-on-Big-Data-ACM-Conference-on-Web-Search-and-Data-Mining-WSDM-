@@ -1,6 +1,6 @@
 # Network-Based Risk Diffusion for Proactive Detection of Dangerous Product Listings and Rogue Seller Collusion on E-Commerce Marketplaces Under the EU Digital Services Act
 
-**Author**: Academic & Data Engineering Research Group  
+**Author**: Rudraksh Mishra  
 **Target Venue**: IEEE Transactions on Big Data / ACM Conference on Web Search and Data Mining (WSDM)  
 **Date**: August 2026  
 
